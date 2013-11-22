@@ -64,13 +64,12 @@ jQuery(function ($) {
 			var $mainmenu = $('#'+menuid+'>ul');
 
 			if ( $ww > settings.width ) {
-				$mainmenu.addClass('full');
-				$mainmenu.removeClass('compact');
+				$('#'+menuid).removeClass('mobile');
+				$('#'+buttonid).removeClass('mobile');
 			} else {
-				$mainmenu.removeClass('full');
-				$mainmenu.addClass('compact');
+				$('#'+menuid).addClass('mobile');
+				$('#'+buttonid).addClass('mobile');
 			}
-
 			var $headers = $mainmenu.find('ul').parent();
 
 			$headers.each(function(i) {

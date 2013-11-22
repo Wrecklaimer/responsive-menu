@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Responsive Menu</title>
+		<meta name="viewport" content="width=device-width">
+
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="../jquery.responsive-menu.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+
+	<body>
+
+		<div id="page">
+			<div class="wrap">
+				<header id="header" class="row cf">
+					<h1>Responsive Menu</h1>
+					<div id="primary-nav-button"><a href="#">Menu</a></div>
+					<nav id="primary-nav" class="dropdown cf">
+						<ul class="dropdown menu">
+							<li class='active'><a href="#">Home</a></li>
+							<li><a href="#">About</a></li>
+							<li><a href="#">Blog</a></li>
+							<li><a href="#">Store</a>
+								<ul class="sub-menu">
+									<li><a href="#">Latest Products</a></li>
+									<li><a href="#">Shirts</a>
+										<ul class="sub-menu">
+											<li><a href="#">Men's</a>
+												<ul class="sub-menu">
+													<li><a href="#">S</a></li>
+													<li><a href="#">M</a></li>
+													<li><a href="#">L</a></li>
+													<li><a href="#">XL</a></li>
+												</ul>
+											</li>
+											<li><a href="#">Women's</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Toys</a>
+										<ul class="sub-menu">
+											<li><a href="#">3+</a></li>
+											<li><a href="#">10+</a></li>
+											<li><a href="#">15+</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Books</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Social</a>
+								<ul class="sub-menu">
+									<li><a href="#">Twitter</a></li>
+									<li><a href="#">Facebook</a></li>
+									<li><a href="#">RSS</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav><!-- / #primary-nav -->
+				</header>
+			</div>
+			<div class="wrap">
+				<div id="content" class="row cf">
+					<div id="main">
+						<h2>A jQuery + CSS Multi-level Responsive Menu</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec pretium lacus. Cras viverra, orci at porttitor condimentum, augue turpis auctor nisl, nec pellentesque enim est ac quam.</p>
+					</div>
+				</div>
+			</div>
+		</div><!-- / #page -->
+
+		<script>
+			jQuery(function ($) {
+				$('#primary-nav').responsivemenu({button:'primary-nav-button'});
+			});
+		</script>
+
+	</body>
+</html>
