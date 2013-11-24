@@ -2,7 +2,7 @@
 
 A jQuery + CSS multi-level responsive menu.
 
-Built to be used with Wordpress custom menus but can be used anywhere (see example markup).
+Built for Wordpress custom menus but can be used anywhere (see example markup).
 
 ## Usage
 
@@ -64,18 +64,18 @@ Class applied to selected menu items\. Useful for CSS styling.
 Class used for dropdown arrow\. Useful for CSS styling.
 
 **Example:**
-```js
-	jQuery(function ($) {
-		$('#primary-nav').responsivemenu({
-			width: 480,
-			button: 'primary-nav-button',
-			animation : {
-				effect: 'slide',
-				show: 100,
-				hide: 100
-			},
-			selected: 'selected',
-			arrow: 'downarrow'
-		});
+```javascript
+jQuery(function ($) {
+	$('#primary-nav').responsivemenu({
+		width: 480,
+		button: 'primary-nav-button',
+		animation : {
+			effect: 'slide',
+			show: 100,
+			hide: 100
+		},
+		selected: 'selected',
+		arrow: 'downarrow'
 	});
+});
 ```
