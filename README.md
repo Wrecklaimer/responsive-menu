@@ -42,25 +42,25 @@ Follow these steps to use the plugin:
 
 ## Options
 
-### Width
+### width
 Responsive width breakpoint that switches between desktop and mobile menu.
 
-### Button
+### button
 The id of the menu button.
 
-### Animation
+### animation
 Menu animations.
-#### Effect
+#### effect
 Animation effect\. Accepts "slide" or "fade"; anything else will use no animation.
-#### Show
+#### show
 Show animation speed (ms).
-#### Hide
+#### hide
 Hide animation speed (ms).
 
-### Selected
+### selected
 Class applied to selected menu items\. Useful for CSS styling.
 
-### Arrow
+### arrow
 Class used for dropdown arrow\. Useful for CSS styling.
 
 **Example:**
