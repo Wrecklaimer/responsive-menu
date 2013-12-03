@@ -5,19 +5,19 @@
  * Version: 1a
  */
 
-jQuery(function ($) {
+jQuery(function($) {
 	$.fn.responsivemenu = function(args) {
 		// Default settings
 		var defaults = {
-			width: 480,            /* Responsive width */
-			button: $(this).attr('id')+'-button', /* Menu button id */
-			animation: {           /* Menu animation */
-				effect: 'slide',     /* Accepts 'slide' or 'fade' */
+			width: 480,                           // Responsive width
+			button: $(this).attr('id')+'-button', // Menu button id
+			animation: {                          // Menu animation
+				effect: 'slide',                    // Accepts 'slide' or 'fade'
 				show: 100,
 				hide: 100
 			},
-			selected: 'selected',  /* Selected class */
-			arrow: 'downarrow'     /* Dropdown arrow class */
+			selected: 'selected',                 // Selected class
+			arrow: 'downarrow'                    // Dropdown arrow class
 		}
 		var settings = $.extend(defaults, args);
 
@@ -33,9 +33,7 @@ jQuery(function ($) {
 		}
 
 		function setupMenu(menuid, buttonid) {
-			var $mainmenu = $('#'+menuid+'>ul');
-
-			var $headers = $mainmenu.find("ul").parent();
+			var $headers = $('#'+menuid+'>ul').find("ul").parent();
 			// Add dropdown arrows
 			$headers.each(function(i) {
 				var $curobj = $(this);
@@ -60,8 +58,9 @@ jQuery(function ($) {
 
 		function resizeMenu(menuid, buttonid) {
 			var $ww = document.body.clientWidth;
-			var $mainmenu = $('#'+menuid+'>ul');
 
+			// Add mobile class to elements for CSS use
+			// instead of relying on media-query support
 			if ( $ww > settings.width ) {
 				$('#'+menuid).removeClass('mobile');
 				$('#'+buttonid).removeClass('mobile');
@@ -69,7 +68,8 @@ jQuery(function ($) {
 				$('#'+menuid).addClass('mobile');
 				$('#'+buttonid).addClass('mobile');
 			}
-			var $headers = $mainmenu.find('ul').parent();
+
+			var $headers = $('#'+menuid+'>ul').find('ul').parent();
 
 			$headers.each(function(i) {
 				var $curobj = $(this);
@@ -108,7 +108,7 @@ jQuery(function ($) {
 						animateHide($targetul);
 					});
 				} else {
-					// Compact menu
+					// Mobile menu
 					$link.click(function(e) {
 						e.preventDefault();
 
@@ -126,7 +126,6 @@ jQuery(function ($) {
 			collapseChildren('#'+menuid);
 
 			if ( isSelected($('#'+buttonid)) ) {
-				//collapseChildren('#'+menuid);
 				$('#'+menuid).hide();
 				$('#'+menuid).removeAttr('style');
 				$('#'+buttonid).removeClass(settings.selected);
