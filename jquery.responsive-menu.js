@@ -10,7 +10,7 @@ jQuery(function ($) {
 		// Default settings
 		var defaults = {
 			width: 480,            /* Responsive width */
-			button: 'menu-button', /* Menu button id */
+			button: $(this).attr('id')+'-button', /* Menu button id */
 			animation: {           /* Menu animation */
 				effect: 'slide',     /* Accepts 'slide' or 'fade' */
 				show: 100,
@@ -47,7 +47,6 @@ jQuery(function ($) {
 			$('#'+buttonid).click(function(e) {
 				e.preventDefault();
 
-				//var $open = $('#'+buttonid).hasClass(settings.selected);
 				if ( isSelected($('#'+buttonid)) ) {
 					// Close menu
 					collapseChildren('#'+menuid);
@@ -112,7 +111,7 @@ jQuery(function ($) {
 					// Compact menu
 					$link.click(function(e) {
 						e.preventDefault();
-						//var $open = $curobj.hasClass(settings.selected);
+
 						var $targetul = $curobj.children('ul:eq(0)');
 						if ( isSelected($curobj) ) {
 							collapseChildren($targetul);
@@ -126,7 +125,6 @@ jQuery(function ($) {
 
 			collapseChildren('#'+menuid);
 
-			//var $open = $('#'+buttonid).hasClass(settings.selected);
 			if ( isSelected($('#'+buttonid)) ) {
 				//collapseChildren('#'+menuid);
 				$('#'+menuid).hide();
@@ -139,7 +137,6 @@ jQuery(function ($) {
 			// Closes all submenus of the specified element
 			var $headers = $(elementid).find('ul');
 			$headers.each(function(i) {
-				//var $open = $(this).parent().hasClass(settings.selected);
 				if ( isSelected($(this).parent()) ) {
 					animateHide($(this));
 				}
