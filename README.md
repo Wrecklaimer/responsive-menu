@@ -16,7 +16,7 @@ Follow these steps to use the plugin:
 
 2. Add markup:
 ```html
-	<div id="primary-nav-button"><a href="#">Menu</a></div>
+	<a id="primary-nav-button" href="#">Menu</a>
 	<nav id="primary-nav">
 		<ul class="menu">
 			<li><a href="#">Home</a></li>
