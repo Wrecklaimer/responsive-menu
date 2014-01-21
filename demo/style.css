@@ -56,6 +56,12 @@ ul {
 	position: absolute;
 	bottom: 5px;
 	right: 0;
+	padding: 5px;
+	text-decoration: none;
+	color: #333;
+	text-align: center;
+	font-weight: bold;
+	font-size: 0;
 }
 
 #primary-nav-button:hover {
@@ -66,17 +72,7 @@ ul {
 	background: rgba(0,0,0,0.1);
 }
 
-#primary-nav-button a {
-	padding: 5px;
-	display: block;
-	text-decoration: none;
-	color: #333;
-	text-align: center;
-	font-weight: bold;
-	font-size: 0;
-}
-
-#primary-nav-button a:before {
+#primary-nav-button:before {
 	content: '☰';
 	display: block;
 	font-size: 23px;
@@ -243,6 +239,7 @@ ul {
 #primary-nav.mobile .sub-menu .downarrow:before {
 	content: '\25be';
 }
+
 #primary-nav-button.mobile {
 	display: inline-block;
 }
