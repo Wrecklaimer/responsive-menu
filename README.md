@@ -9,13 +9,14 @@ Built for Wordpress custom menus but can be used anywhere (see example markup).
 Follow these steps to use the plugin:
 
 1. Link scripts in `<head>`:
-```html
+
+ ```html
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="responsive-menu.min.js"></script>
-```
-
+ ```
 2. Add markup:
-```html
+
+ ```html
 	<a id="primary-nav-button" href="#">Menu</a>
 	<nav id="primary-nav">
 		<ul class="menu">
@@ -29,16 +30,16 @@ Follow these steps to use the plugin:
 			</li>
 		</ul>
 	</nav>
-```
-
+ ```
 3. Hook up the plugin before `</body>`:
-```html
+
+ ```html
 	<script>
 		jQuery(function ($) {
 			$('#primary-nav').responsivemenu(); // Replace 'primary-nav' with your id
 		});
 	</script>
-```
+ ```
 
 ## Options
 
