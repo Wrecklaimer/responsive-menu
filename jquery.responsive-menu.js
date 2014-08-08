@@ -64,12 +64,14 @@ jQuery(function($) {
 
 			// Add mobile class to elements for CSS use
 			// instead of relying on media-query support
-			if ( $ww > settings.width || !$settings.responsive ) {
-				$('#'+menuid).removeClass('mobile');
-				$('#'+buttonid).removeClass('mobile');
-			} else {
-				$('#'+menuid).addClass('mobile');
-				$('#'+buttonid).addClass('mobile');
+			if ( settings.responsive ) {
+				if ( $ww > settings.width ) {
+					$('#'+menuid).removeClass('mobile');
+					$('#'+buttonid).removeClass('mobile');
+				} else {
+						$('#'+menuid).addClass('mobile');
+						$('#'+buttonid).addClass('mobile');
+				}
 			}
 
 			var $headers = $('#'+menuid+'>ul').find('ul').parent();
@@ -83,7 +85,7 @@ jQuery(function($) {
 				$curobj.unbind('mouseenter mouseleave');
 				$link.unbind('click');
 
-				if ( $ww > settings.width  || !settings.responsive ) {
+				if ( $ww > settings.width || !setting.responsive ) {
 					// Full menu
 					$curobj.hover(function(e) {
 						var $targetul = $(this).children('ul:eq(0)');
