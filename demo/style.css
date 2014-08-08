@@ -62,6 +62,7 @@ ul {
 	text-align: center;
 	font-weight: bold;
 	font-size: 0;
+	cursor: pointer;
 }
 
 #primary-nav-button:hover {
@@ -242,6 +243,4 @@ ul {
 
 #primary-nav-button.mobile {
 	display: inline-block;
-}
-
 }

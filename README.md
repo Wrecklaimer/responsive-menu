@@ -11,34 +11,34 @@ Follow these steps to use the plugin:
 1. Link scripts in `<head>`:
 
  ```html
-	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script src="responsive-menu.min.js"></script>
+ <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+ <script src="responsive-menu.min.js"></script>
  ```
 2. Add markup:
 
  ```html
-	<a id="primary-nav-button" href="#">Menu</a>
-	<nav id="primary-nav">
-		<ul class="menu">
-			<li><a href="#">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Blog</a></li>
-			<li><a href="#">Store</a>
-				<ul class="sub-menu">
-					<li><a href="#">Latest Products</a></li>
-				</ul>
-			</li>
-		</ul>
-	</nav>
+ <button id="primary-nav-button" href="#">Menu</button>
+ <nav id="primary-nav">
+ 	<ul class="menu">
+ 		<li><a href="#">Home</a></li>
+ 		<li><a href="#">About</a></li>
+ 		<li><a href="#">Blog</a></li>
+ 		<li><a href="#">Store</a>
+ 			<ul class="sub-menu">
+ 				<li><a href="#">Latest Products</a></li>
+ 			</ul>
+ 		</li>
+ 	</ul>
+ </nav>
  ```
 3. Hook up the plugin before `</body>`:
 
  ```html
-	<script>
-		jQuery(function ($) {
-			$('#primary-nav').responsivemenu(); // Replace 'primary-nav' with your id
-		});
-	</script>
+ <script>
+ 	jQuery(function ($) {
+ 		$('#primary-nav').responsivemenu(); // Replace 'primary-nav' with your id
+ 	});
+ </script>
  ```
 
 ## Options
