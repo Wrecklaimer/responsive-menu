@@ -15,6 +15,18 @@
 		<div id="page">
 			<div class="wrap">
 				<header id="header" class="row cf">
+					<nav id="top-nav" class="dropdown cf">
+						<ul class="dropdown menu">
+							<li><a href="#">Contact Us</a></li>
+							<li><a href="#">Account</a>
+								<ul class="sub-menu">
+									<li><a href="#">Preferences</a></li>
+									<li><a href="#">Sign out</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Cart (2 items)</a></li>
+						</ul>
+					</nav>
 					<h1>Responsive Menu</h1>
 					<button id="primary-nav-button" href="#">Menu</button>
 					<nav id="primary-nav" class="dropdown cf">
@@ -72,6 +84,7 @@
 		<script>
 			jQuery(function ($) {
 				$('#primary-nav').responsivemenu();
+				$('#top-nav').responsivemenu({responsive:false});
 			});
 		</script>
 

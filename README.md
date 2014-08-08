@@ -36,38 +36,50 @@ Follow these steps to use the plugin:
  ```html
  <script>
  	jQuery(function ($) {
- 		$('#primary-nav').responsivemenu(); // Replace 'primary-nav' with your id
+ 		$('#primary-nav').responsivemenu(); // Replace 'primary-nav' with your menu id
  	});
  </script>
  ```
 
 ## Options
 
+### responsive
+Enables responsive functions, such as adding/removing classes based on viewport width\. Disable this for simple drop-down menus.
+*Defaults to true*
+
 ### width
 Responsive width breakpoint that switches between desktop and mobile menu.
+*Defaults to 480*
 
 ### button
 The id of the menu button.
+*Defaults to {menu-id}+'-button'.*
 
 ### animation
 Menu animations.
 #### effect
 Animation effect\. Accepts "slide" or "fade"; anything else will use no animation.
+*Defaults to 'slide'*
 #### show
 Show animation speed (ms).
+*Defaults to 100*
 #### hide
 Hide animation speed (ms).
+*Defaults to 100*
 
 ### selected
 Class applied to selected menu items\. Useful for CSS styling.
+*Defaults to 'selected'*
 
 ### arrow
 Class used for dropdown arrow\. Useful for CSS styling.
+*Defaults to 'downarrow'*
 
 **Example:**
 ```javascript
 jQuery(function ($) {
 	$('#primary-nav').responsivemenu({
+		responsive: true,
 		width: 480,
 		button: 'primary-nav-button',
 		animation : {

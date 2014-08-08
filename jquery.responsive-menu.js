@@ -1,4 +1,4 @@
-/**
+/*!
  * Responsive Menu
  * A jQuery + CSS multi-level responsive menu
  *
@@ -9,12 +9,13 @@ jQuery(function($) {
 	$.fn.responsivemenu = function(args) {
 		// Default settings
 		var defaults = {
+			responsive: true,                     // Enable responsive functions
 			width: 480,                           // Responsive width
 			button: $(this).attr('id')+'-button', // Menu button id
 			animation: {                          // Menu animation
 				effect: 'slide',                    // Accepts 'slide' or 'fade'
-				show: 100,
-				hide: 100
+				show: 100,                          // Effect show speed
+				hide: 100                           // Effect hide speed
 			},
 			selected: 'selected',                 // Selected class
 			arrow: 'downarrow'                    // Dropdown arrow class
@@ -40,20 +41,22 @@ jQuery(function($) {
 				$curobj.children('a:eq(0)').append('<span class="'+settings.arrow+'"></span>');
 			});
 
-			// Menu button click event
-			// Displays top-level menu items
-			$('#'+buttonid).click(function(e) {
-				e.preventDefault();
+			if ( settings.responsive ) {
+				// Menu button click event
+				// Displays top-level menu items
+				$('#'+buttonid).click(function(e) {
+					e.preventDefault();
 
-				if ( isSelected($('#'+buttonid)) ) {
-					// Close menu
-					collapseChildren('#'+menuid);
-					animateHide($('#'+menuid), $('#'+buttonid));
-				} else {
-					// Open menu
-					animateShow($('#'+menuid), $('#'+buttonid));
-				}
-			});
+					if ( isSelected($('#'+buttonid)) ) {
+						// Close menu
+						collapseChildren('#'+menuid);
+						animateHide($('#'+menuid), $('#'+buttonid));
+					} else {
+						// Open menu
+						animateShow($('#'+menuid), $('#'+buttonid));
+					}
+				});
+			}
 		}
 
 		function resizeMenu(menuid, buttonid) {
@@ -61,7 +64,7 @@ jQuery(function($) {
 
 			// Add mobile class to elements for CSS use
 			// instead of relying on media-query support
-			if ( $ww > settings.width ) {
+			if ( $ww > settings.width || !$settings.responsive ) {
 				$('#'+menuid).removeClass('mobile');
 				$('#'+buttonid).removeClass('mobile');
 			} else {
@@ -80,7 +83,7 @@ jQuery(function($) {
 				$curobj.unbind('mouseenter mouseleave');
 				$link.unbind('click');
 
-				if ( $ww > settings.width ) {
+				if ( $ww > settings.width  || !settings.responsive ) {
 					// Full menu
 					$curobj.hover(function(e) {
 						var $targetul = $(this).children('ul:eq(0)');
@@ -125,7 +128,7 @@ jQuery(function($) {
 
 			collapseChildren('#'+menuid);
 
-			if ( isSelected($('#'+buttonid)) ) {
+			if ( settings.responsive && isSelected($('#'+buttonid)) ) {
 				$('#'+menuid).hide();
 				$('#'+menuid).removeAttr('style');
 				$('#'+buttonid).removeClass(settings.selected);

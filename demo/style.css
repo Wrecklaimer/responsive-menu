@@ -106,22 +106,22 @@ ul {
 }
 
 #top-nav li a {
-	color: #8CC152;
-	padding: 5px 0;
+  color: #8CC152;
+  padding: 5px 0;
 }
 
 #top-nav .sub-menu {
-	background: #fff;
+  background: #fff;
 }
 
 #top-nav .sub-menu li a {
-	padding: 5px;
+  padding: 5px;
 }
 
 #top-nav .sub-menu li > a:hover,
 #top-nav .sub-menu li.selected > a {
-	background: #8CC152;
-	color: #000;
+  background: #8CC152;
+  color: #000;
 }
 
 #primary-nav li a {
