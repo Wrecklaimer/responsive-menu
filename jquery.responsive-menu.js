@@ -154,6 +154,9 @@ jQuery(function($) {
 
 			button.addClass(settings.selected);
 
+			// Clear animation queue
+			menu.stop( true, true );
+
 			if ( settings.animation.effect == 'fade' ) {
 				menu.fadeIn(settings.animation.show);
 			} else if ( settings.animation.effect == 'slide' ) {
@@ -165,6 +168,9 @@ jQuery(function($) {
 
 		function animateHide(menu, button) {
 			if ( !button ) { var button = menu.parent(); }
+
+			// Clear animation queue
+			menu.stop( true, true );
 
 			if ( settings.animation.effect == 'fade' ) {
 				menu.fadeOut(settings.animation.hide, function() {
