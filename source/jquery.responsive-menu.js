@@ -85,7 +85,7 @@ jQuery(function($) {
 				$curobj.unbind('mouseenter mouseleave');
 				$link.unbind('click');
 
-				if ( $ww > settings.width || !setting.responsive ) {
+				if ( $ww > settings.width || !settings.responsive ) {
 					// Full menu
 					$curobj.hover(function(e) {
 						var $targetul = $(this).children('ul:eq(0)');
