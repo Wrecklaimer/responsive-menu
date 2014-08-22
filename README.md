@@ -44,35 +44,36 @@ Follow these steps to use the plugin:
 ## Options
 
 ### responsive
-Enables responsive functions, such as adding/removing classes based on viewport width\. Disable this for simple drop-down menus.
+Enables responsive functions, such as adding/removing classes based on viewport width\. Disable this for simple drop-down menus. 
 *Defaults to true*
 
 ### width
-Responsive width breakpoint that switches between desktop and mobile menu.
+Responsive width breakpoint that switches between desktop and mobile menu. 
 *Defaults to 480*
 
 ### button
-The id of the menu button.
+The id of the menu button. 
 *Defaults to {menu-id}+'-button'.*
 
 ### animation
 Menu animations.
 #### effect
-Animation effect\. Accepts "slide" or "fade"; anything else will use no animation.
+Animation effect\. Accepts "slide" or "fade"; anything else will use no animation. 
 *Defaults to 'slide'*
 #### show
-Show animation speed (ms).
+Show animation speed (ms). 
 *Defaults to 100*
 #### hide
-Hide animation speed (ms).
+Hide animation speed (ms). 
 *Defaults to 100*
 
-### selected
-Class applied to selected menu items\. Useful for CSS styling.
+### classes
+CSS classes added to the markup. Useful for CSS styling.
+#### selected
+Class applied to selected menu items. 
 *Defaults to 'selected'*
-
-### arrow
-Class used for dropdown arrow\. Useful for CSS styling.
+#### arrow
+Class used for dropdown arrow. 
 *Defaults to 'downarrow'*
 
 **Example:**

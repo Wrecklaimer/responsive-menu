@@ -13,12 +13,14 @@ jQuery(function($) {
 			width: 480,                           // Responsive width
 			button: $(this).attr('id')+'-button', // Menu button id
 			animation: {                          // Menu animation
-				effect: 'slide',                    // Accepts 'slide' or 'fade'
-				show: 100,                          // Effect show speed
-				hide: 100                           // Effect hide speed
+			  effect: 'slide',                    // Accepts 'slide' or 'fade'
+			  show: 100,                          // Effect show speed
+			  hide: 100                           // Effect hide speed
 			},
-			selected: 'selected',                 // Selected class
-			arrow: 'downarrow'                    // Dropdown arrow class
+			classes: {
+			  selected: 'selected',               // Selected class
+			  arrow: 'downarrow'                  // Drop-down arrow class
+			}
 		}
 		var settings = $.extend(defaults, args);
 
@@ -38,7 +40,7 @@ jQuery(function($) {
 			// Add dropdown arrows
 			$headers.each(function(i) {
 				var $curobj = $(this);
-				$curobj.children('a:eq(0)').append('<span class="'+settings.arrow+'"></span>');
+				$curobj.children('a:eq(0)').append('<span class="'+settings.classes.arrow+'"></span>');
 			});
 
 			if ( settings.responsive ) {
@@ -133,7 +135,7 @@ jQuery(function($) {
 			if ( settings.responsive && isSelected($('#'+buttonid)) ) {
 				$('#'+menuid).hide();
 				$('#'+menuid).removeAttr('style');
-				$('#'+buttonid).removeClass(settings.selected);
+				$('#'+buttonid).removeClass(settings.classes.selected);
 			}
 		}
 
@@ -148,13 +150,13 @@ jQuery(function($) {
 		}
 
 		function isSelected(element) {
-			return element.hasClass(settings.selected);
+			return element.hasClass(settings.classes.selected);
 		}
 
 		function animateShow(menu, button) {
 			if ( !button ) { var button = menu.parent(); }
 
-			button.addClass(settings.selected);
+			button.addClass(settings.classes.selected);
 
 			// Clear animation queue
 			menu.stop( true, true );
@@ -177,17 +179,17 @@ jQuery(function($) {
 			if ( settings.animation.effect == 'fade' ) {
 				menu.fadeOut(settings.animation.hide, function() {
 					menu.removeAttr('style');
-					button.removeClass(settings.selected);
+					button.removeClass(settings.classes.selected);
 				});
 			} else if ( settings.animation.effect == 'slide' ) {
 				menu.slideUp(settings.animation.hide, function() {
 					menu.removeAttr('style');
-					button.removeClass(settings.selected);
+					button.removeClass(settings.classes.selected);
 				});
 			} else {
 				menu.hide();
 				menu.removeAttr('style');
-				button.removeClass(settings.selected);
+				button.removeClass(settings.classes.selected);
 			}
 		}
 	};
