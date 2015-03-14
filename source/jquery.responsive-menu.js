@@ -81,11 +81,12 @@ jQuery(function($) {
 			$headers.each(function(i) {
 				var $curobj = $(this);
 				var $link = $curobj.children('a:eq(0)');
+				var $dd = $link.children('span:eq(0)');
 				var $subul = $curobj.find('ul:eq(0)');
 
 				// Unbind events
 				$curobj.unbind('mouseenter mouseleave');
-				$link.unbind('click');
+				$dd.unbind('click');
 
 				if ( $ww > settings.width || !settings.responsive ) {
 					// Full menu
@@ -116,7 +117,7 @@ jQuery(function($) {
 					});
 				} else {
 					// Mobile menu
-					$link.click(function(e) {
+					$dd.click(function(e) {
 						e.preventDefault();
 
 						var $targetul = $curobj.children('ul:eq(0)');
