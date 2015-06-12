@@ -13,16 +13,16 @@ jQuery(function($) {
 			width: 480,                           // Responsive width
 			button: $(this).attr('id')+'-button', // Menu button id
 			animation: {                          // Menu animation
-			  effect: 'slide',                    // Accepts 'slide' or 'fade'
-			  show: 100,                          // Effect show speed
-			  hide: 100                           // Effect hide speed
+				effect: 'slide',                    // Accepts 'slide' or 'fade'
+				show: 100,                          // Effect show speed
+				hide: 100                           // Effect hide speed
 			},
 			classes: {
-			  selected: 'selected',               // Selected class
-			  arrow: 'downarrow'                  // Drop-down arrow class
+				selected: 'selected',               // Selected class
+				arrow: 'downarrow'                  // Drop-down arrow class
 			}
-		}
-		var settings = $.extend(defaults, args);
+		};
+		var settings = $.extend(true, defaults, args);
 
 		// Initialize the menu and the button
 		init($(this).attr('id'), settings.button);
@@ -101,13 +101,11 @@ jQuery(function($) {
 						var $istopheader = $curobj.parents('ul').length == 1 ? true : false;
 						$subul.css($istopheader ? {} : { top: 0 });
 						var $offsets = { left: $(this).offset().left,
-														 top: $(this).offset().top
-													 };
+											top: $(this).offset().top };
 						var $menuleft = $istopheader ? 0 : $dims.w;
 						$menuleft = ( $offsets.left + $menuleft + $dims.subulw > $(window).width() ) ? ( $istopheader ? -$dims.subulw + $dims.w : -$dims.w ) : $menuleft;
 						$targetul.css({ left:$menuleft+'px',
-														width:$dims.subulw+'px'
-													});
+										width:$dims.subulw+'px' });
 
 						animateShow($targetul);
 					},
@@ -155,7 +153,7 @@ jQuery(function($) {
 		}
 
 		function animateShow(menu, button) {
-			if ( !button ) { var button = menu.parent(); }
+			if ( !button ) { button = menu.parent(); }
 
 			button.addClass(settings.classes.selected);
 
@@ -172,7 +170,7 @@ jQuery(function($) {
 		}
 
 		function animateHide(menu, button) {
-			if ( !button ) { var button = menu.parent(); }
+			if ( !button ) { button = menu.parent(); }
 
 			// Clear animation queue
 			menu.stop( true, true );
