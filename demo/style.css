@@ -119,6 +119,7 @@ body {
 	color: #333;
 	font-weight: bold;
 	padding: 10px;
+	line-height: 1;
 }
 
 #primary-nav .menu-item.active > a,
@@ -128,7 +129,42 @@ body {
 	color: #000;
 }
 
-.menu .downarrow {
+#primary-nav.mobile .menu .downarrow, 
+#primary-nav:not(.mobile) .menu .sub-menu .downarrow {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+#primary-nav.mobile .menu .downarrow {
+	cursor: default;
+	padding: 5%;
+	font-size: 1.33333em;
+	line-height: .75;
+	vertical-align: -15%;
+	transition: transform .1s ease;
+}
+
+#primary-nav.mobile .menu .menu-item.selected > a .downarrow {
+	transform: rotate(-179.99deg);
+}
+
+:not(.mobile) .menu .downarrow {
+	font-size: .666667em;
+	line-height: 1.25;
+	vertical-align: 15%;
+}
+
+:not(.mobile) .menu > .menu-item .downarrow {
+	margin-left: .25em;
+}
+
+:not(.mobile) .menu .sub-menu .downarrow {
+	transform: rotate(270deg);
+	padding: 10px;
+}
+
+/*.menu .downarrow {
 	float: right;
 	height: 1.25em;
 	margin-left: .25em;
@@ -170,7 +206,7 @@ body {
 .sub-menu .downarrow:before {
 	border-color: transparent #555;
 	border-width: 4px 0 4px 5px;
-}
+}*/
 
 .menu .sub-menu {
 	display: none;

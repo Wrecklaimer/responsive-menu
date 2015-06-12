@@ -8,6 +8,7 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="../source/jquery.responsive-menu.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
 	</head>
 
 	<body>
@@ -28,7 +29,7 @@
 						</ul>
 					</nav>
 					<h1>Responsive Menu</h1>
-					<button id="primary-nav-button" href="#">Menu</button>
+					<button id="primary-nav-button" name="primary-nav-button">Menu</button>
 					<nav id="primary-nav" class="dropdown cf">
 						<ul class="dropdown menu">
 							<li class='menu-item active'><a href="#">Home</a></li>
@@ -75,7 +76,7 @@
 				<div id="content" class="row cf">
 					<div id="main">
 						<h2>A jQuery + CSS Multi-level Responsive Menu</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec pretium lacus. Cras viverra, orci at porttitor condimentum, augue turpis auctor nisl, nec pellentesque enim est ac quam.</p>
+						<p>Built for Wordpress custom menus but can be used anywhere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec pretium lacus. Cras viverra, orci at porttitor condimentum, augue turpis auctor nisl, nec pellentesque enim est ac quam.</p>
 					</div>
 				</div>
 			</div>
@@ -83,8 +84,17 @@
 
 		<script>
 			jQuery(function ($) {
-				$('#primary-nav').responsivemenu();
-				$('#top-nav').responsivemenu({responsive:false});
+				$('#primary-nav').responsivemenu({
+					classes: {
+						arrow: 'downarrow fa fa-chevron-down'
+					}
+				});
+				$('#top-nav').responsivemenu({
+					responsive: false,
+					classes: {
+						arrow: 'downarrow fa fa-chevron-down'
+					}
+				});
 			});
 		</script>
 
